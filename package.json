@@ -1,0 +1,7 @@
+{
+  "name": "test-gem",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

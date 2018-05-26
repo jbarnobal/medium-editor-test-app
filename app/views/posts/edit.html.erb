@@ -1,0 +1,36 @@
+<div class="columns">
+  <div class="column is-half is-offset-one-quarter">
+    <h1>
+      Rails medium editor insert plugin
+    </h1>
+
+    <div class="editable"></div>
+  </div>  
+</div>
+
+<script>
+  var editor = new MediumEditor('.editable',{
+     placeholder: {
+          text: "Write a story"
+        }
+  });
+
+  $(function () {
+    $('.editable').mediumInsert({
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: {
+              url: '/images/upload',
+              type: 'post',
+              acceptFileTypes: /(.|\/)(gif|jpe?g|png)$/i
+            },
+              fileDeleteOptions: {
+              url: '/image/delete',
+              type: 'delete'
+            }
+          }
+        }
+    });
+  });
+</script>
